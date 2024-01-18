@@ -21,6 +21,7 @@ public class SampleTest {
     public static void setup() {
         Configuration.browser = "chrome";
         Configuration.baseUrl = "https://www.google.com";
+        Configuration.headless = true;
     }
 
     @BeforeEach
