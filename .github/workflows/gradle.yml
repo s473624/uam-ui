@@ -30,7 +30,11 @@ jobs:
         distribution: 'temurin'
     - name: Make gradlew executable
       run: chmod +x ./gradlew
-    - name: Build with Gradle
+    - name: Run SampleTest
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
-        arguments: build
+        arguments: clean test --tests org.example.SampleTest
+    - name: Run Cucumber
+      uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
+      with:
+        arguments: clean test --tests runners.Runner
